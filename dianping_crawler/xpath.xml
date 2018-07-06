@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xpath>
+    <shop_item>
+        <ding />
+        <shop_level>//div[2]/div[2]/span/@title</shop_level>
+        <city_id />
+        <main_category_name>//div[2]/div[3]/a[1]/span/text()</main_category_name>
+        <service_score>//div[2]/span/span[3]/b/text()</service_score>
+        <city_name />
+        <shop_id />
+        <shop_power />
+        <shop_group_id />
+        <full_name />
+        <food_type>//div[2]/div[3]/a[1]/span/text()</food_type>
+        <cu />
+        <taste_score>//div[2]/span/span[1]/b/text()</taste_score>
+        <shop_url>//div[2]/div[1]/a[1]/@href</shop_url>
+        <comment_number>//div[2]/div[2]/a[1]/b/text()</comment_number>
+        <main_category_id />
+        <shop_name>//div[2]/div[1]/a[1]/h4/text()</shop_name>
+        <shop_glat />
+        <location>//div[2]/div[3]/a[2]/span/text()</location>
+        <power />
+        <shop_glng />
+        <huo />
+        <phone />
+        <shop_type />
+        <address>//div[2]/div[3]/span/text()</address>
+        <avgcost>//div[2]/div[2]/a[2]/b/text()</avgcost>
+        <shop_logo>//div[1]/a/img/@data-src</shop_logo>
+        <tuan />
+        <wai />
+        <shop_list>//*[@id:"shop-all-list"]/ul//li</shop_list>
+        <environment_score>//div[2]/span/span[2]/b/text()</environment_score>
+        <vote_total/>
+        <district/>
+        <public_transit/>
+        <opening_time>//*[@id="basic-info"]/div[4]/p[1]/span[2]/text()</opening_time>
+        <shop_info>//*[@id="basic-info"]/div[4]/p[4]/text()</shop_info>
+    </shop_item>
+    <user_item>
+        <follows>/html/body/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/ul/li[1]/a/strong/text()</follows>
+        <fans>/html/body/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/ul/li[2]/a/strong/text()</fans>
+        <hudong>/html/body/div[2]/div[2]/div/div[1]/div[1]/div/div[1]/ul/li[3]/strong/text()</hudong>
+        <mana_score>//*[@id="J_col_exp"]</mana_score>
+        <mana_of_review>//*[@id="J_lay_devote"]/p[1]</mana_of_review>
+        <mana_of_shop>//*[@id="J_lay_devote"]/p[2]</mana_of_shop>
+        <mana_of_other>//*[@id="J_lay_devote"]/p[5]</mana_of_other>
+        <mana_of_user_base>//*[@id="J_lay_devote"]/p[4]</mana_of_user_base>
+        <reviews>/html/body/div[2]/div[1]/div/div/div/div[2]/div[3]/ul/li[2]/a/text()</reviews>
+        <wishlists>/html/body/div[2]/div[1]/div/div/div/div[2]/div[3]/ul/li[3]/a/text()</wishlists>
+        <chechin>/html/body/div[2]/div[1]/div/div/div/div[2]/div[3]/ul/li[4]/a/text()</chechin>
+        <birth>//*[@id="J_UMoreInfoD"]/ul[1]</birth>
+    </user_item>
+</xpath>

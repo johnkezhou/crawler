@@ -1,0 +1,353 @@
+# -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# http://doc.scrapy.org/en/latest/topics/items.html
+
+import scrapy
+
+
+class DianpingCrawlerItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    pass
+
+class Shop(scrapy.Item):
+    shop_id = scrapy.Field()        #商店id
+    shop_name = scrapy.Field()      #商店名称
+    full_name = scrapy.Field()
+    shop_logo = scrapy.Field()      #商店logo url
+    shop_url = scrapy.Field()       #商店url
+    shop_level = scrapy.Field()     #商店等级，几星商户
+    phone = scrapy.Field()          #联系方式
+    comment_number = scrapy.Field() #评论数
+    avgcost = scrapy.Field()        #人均消费
+    taste_score = scrapy.Field()          #口味评分
+    environment_score = scrapy.Field()    #环境评分
+    service_score = scrapy.Field()        #服务评分
+    food_type = scrapy.Field()      #菜系
+    location = scrapy.Field()       #地区
+    address = scrapy.Field()        #详细地址
+    tuan = scrapy.Field()           #团购
+    cu = scrapy.Field()             #促销
+    wai = scrapy.Field()            #外卖
+    huo = scrapy.Field()            #活动
+    ding = scrapy.Field()           #订座
+    city_id = scrapy.Field()        #城市Id
+    city_name = scrapy.Field()      #城市名称
+    shop_glat = scrapy.Field()      #店铺维度
+    shop_glng = scrapy.Field()      #店铺精度
+    power = scrapy.Field()          #
+    shop_power = scrapy.Field()     #
+    shop_type = scrapy.Field()      #
+    main_category_id = scrapy.Field()
+    main_category_name = scrapy.Field()
+    shop_group_id = scrapy.Field()  #组id
+    vote_total = scrapy.Field()
+    district = scrapy.Field()
+    public_transit = scrapy.Field()
+    opening_time = scrapy.Field()   #营业时间
+    shop_info = scrapy.Field()      #商店简介
+
+
+class Review(scrapy.Item):
+    review_id = scrapy.Field()
+    user_id = scrapy.Field()
+    status = scrapy.Field()
+    shop_id = scrapy.Field()
+    review_body = scrapy.Field()
+    expense_info_list = scrapy.Field()
+    review_body_brief = scrapy.Field()
+    star = scrapy.Field()               #总体评价
+    taste_score = scrapy.Field()        #口味评分
+    environment_score = scrapy.Field()  #环境评分
+    service_score = scrapy.Field()      #服务评分
+    hits = scrapy.Field()
+    ext_info_list = scrapy.Field()
+    has_follow_note = scrapy.Field()
+    is_try_review = scrapy.Field()
+    flower_total = scrapy.Field()
+    is_check_in_review = scrapy.Field()
+    is_contract_review = scrapy.Field()
+    last_ip = scrapy.Field()
+    user_review_count = scrapy.Field()
+    review_body_length = scrapy.Field()
+    pic_total = scrapy.Field()
+    add_time = scrapy.Field()
+    last_time = scrapy.Field()
+    is_group_review = scrapy.Field()
+    status_code = scrapy.Field()
+    client_type = scrapy.Field()
+
+class User(scrapy.Item):
+    user_email = scrapy.Field()
+    user_nick_name = scrapy.Field()  #用户名称
+    user_city = scrapy.Field()
+    user_source = scrapy.Field()
+    user_power = scrapy.Field()
+    user_face = scrapy.Field()
+    user_vote = scrapy.Field()
+    user_vote_good = scrapy.Field()
+    user_login = scrapy.Field()
+    vip_level = scrapy.Field()  #是否为vip用户
+    user_level_title = scrapy.Field()
+    location = scrapy.Field()   #用户地址
+    wishlists = scrapy.Field()  #收藏数
+    reviews = scrapy.Field()    #点评数
+    follows = scrapy.Field()    #关注
+    fans = scrapy.Field()       #粉丝
+    hudong = scrapy.Field()     #互动
+    love_state = scrapy.Field() #恋爱状态
+    birth = scrapy.Field()      #生日
+    constellation = scrapy.Field()#星座
+    hobby = scrapy.Field()      #爱好
+    food_type = scrapy.Field()  #喜欢的菜系
+    group_user_score = scrapy.Field()
+    user_id = scrapy.Field()
+    user_hits = scrapy.Field()
+    mana_score = scrapy.Field() #用户贡献值
+    mana_of_shop = scrapy.Field()
+    mana_of_review = scrapy.Field()
+    mana_of_other = scrapy.Field()
+    mana_of_user_base = scrapy.Field()
+    old_group_user_score = scrapy.Field()
+    mobile_n_o = scrapy.Field()
+    dcash = scrapy.Field()
+    user_i_p = scrapy.Field()
+    person_info = scrapy.Field()
+
+
+class Collection(scrapy.Item):
+    shop_name = scrapy.Field()
+
+
+class Dish(scrapy.Item):
+    menu_id = scrapy.Field()
+    shop_id = scrapy.Field()
+    dish_tag_name = scrapy.Field()
+    tag_count = scrapy.Field()
+    price_map = scrapy.Field()
+    price_count = scrapy.Field()
+    final_price = scrapy.Field()
+    official_price = scrapy.Field()
+    default_pic_id = scrapy.Field()
+    default_pic_uRL = scrapy.Field()
+    official_pic_id = scrapy.Field()
+    official_pic_uRL = scrapy.Field()
+
+class Summary(scrapy.Item):
+    id = scrapy.Field()
+    shop_id = scrapy.Field()
+    summary_type = scrapy.Field()
+    summary_name = scrapy.Field()
+    summary_string = scrapy.Field()
+    summary_count = scrapy.Field()
+
+
+
+'''
+ user_level_title
+    review_data_list = scrapy.Field()
+        status = scrapy.Field()
+        expense_info_list = scrapy.Field()
+        shop_type = scrapy.Field()
+        refer_token = scrapy.Field()
+        client_type = scrapy.Field()
+        ext_deal_order_id = scrapy.Field()
+        review_body = scrapy.Field()
+        review_id = scrapy.Field()
+        user_id = scrapy.Field()
+        shop_group_id = scrapy.Field()
+        ext_info_list = scrapy.Field()
+        review_body_length = scrapy.Field()
+        city_id = scrapy.Field()
+        review_pics = scrapy.Field()
+            url = scrapy.Field()
+            pic_id = scrapy.Field()
+            review_id = scrapy.Field()
+        refer_id = scrapy.Field()
+        star = scrapy.Field()
+            desc = scrapy.Field()
+            value = scrapy.Field()
+            title = scrapy.Field()
+        refer_type = scrapy.Field()
+        ext_deal_id = scrapy.Field()
+        hits = scrapy.Field()
+        flower_total = scrapy.Field()
+        tuangou_tag = scrapy.Field()
+        add_time = scrapy.Field()
+        shop_id = scrapy.Field()
+        merchant_follow_count = scrapy.Field()
+        last_ip = scrapy.Field()
+        score_list = scrapy.Field()
+            desc = scrapy.Field()
+            value = scrapy.Field()
+            title = scrapy.Field()
+        ext_shan_hui_order_id = scrapy.Field()
+        ext_order_id = scrapy.Field()
+        last_time = scrapy.Field()
+        type = scrapy.Field()
+        follow_note_no = scrapy.Field()
+        pic_total = scrapy.Field()
+        status_code = scrapy.Field()
+    code = scrapy.Field()
+    tab_in_ulr = scrapy.Field()
+    is_show_park_order_filter = scrapy.Field()
+    tab_name_for_ga = scrapy.Field()
+    review_count_default = scrapy.Field()
+    tab_selected_value = scrapy.Field()
+    review_count_waiting = scrapy.Field()
+    review_count_star5 = scrapy.Field()
+    review_count_star4 = scrapy.Field()
+    review_count_star3 = scrapy.Field()
+    review_count_star2 = scrapy.Field()
+    review_count_star1 = scrapy.Field()
+    review_count_for_more = scrapy.Field()
+    msg = scrapy.Field()
+    review_count_pic = scrapy.Field()
+    has_filter_reviews = scrapy.Field()
+    summarys = scrapy.Field()
+        summary_count = scrapy.Field()
+        summary_name = scrapy.Field()
+        summary_type = scrapy.Field()
+        summary_string = scrapy.Field()
+    review_count_all = scrapy.Field()
+    new_header = scrapy.Field()
+    user = scrapy.Field()
+    dish_tag_str_list = scrapy.Field()
+    official_pic = scrapy.Field()
+    review_count_park = scrapy.Field()
+    review_all_d_o_list = scrapy.Field()
+        goods = scrapy.Field()
+        qq_nick_name = scrapy.Field()
+        daren_tag_id = scrapy.Field()
+        is_monthly_star = scrapy.Field()
+        month = scrapy.Field()
+        login_user = scrapy.Field()
+        need_user_more_review = scrapy.Field()
+        review_data_v_o = scrapy.Field()
+            status = scrapy.Field()
+            star = scrapy.Field()
+                desc = scrapy.Field()
+                value = scrapy.Field()
+                title = scrapy.Field()
+            expense_info_list = scrapy.Field()
+            shop_type = scrapy.Field()
+            shop_group_id = scrapy.Field()
+            follow_note_add_time = scrapy.Field()
+            review_body_brief = scrapy.Field()
+            follow_note_string = scrapy.Field()
+            score_v_o_list = scrapy.Field()
+            review_body = scrapy.Field()
+            review_id = scrapy.Field()
+            review_body_hidden = scrapy.Field()
+            hits = scrapy.Field()
+            ext_info_list = scrapy.Field()
+            shop_id = scrapy.Field()
+            city_id = scrapy.Field()
+            has_follow_note = scrapy.Field()
+            is_try_review = scrapy.Field()
+            ext_info_v_o_list = scrapy.Field()
+            follow_note_id = scrapy.Field()
+            flower_total = scrapy.Field()
+            is_check_in_review = scrapy.Field()
+            follow_note_add_time_v_o = scrapy.Field()
+            is_contract_review = scrapy.Field()
+            last_time_v_o = scrapy.Field()
+            expense_v_o_list = scrapy.Field()
+            add_time_v_o = scrapy.Field()
+            review_data = scrapy.Field()
+            last_ip = scrapy.Field()
+            user_review_count = scrapy.Field()
+            is_d_p_group_review = scrapy.Field()
+            score_list = scrapy.Field()
+                desc = scrapy.Field()
+                value = scrapy.Field()
+                title = scrapy.Field()
+            review_body_length = scrapy.Field()
+            pic_total = scrapy.Field()
+            add_time = scrapy.Field()
+            last_time = scrapy.Field()
+            is_group_review = scrapy.Field()
+            follow_note_no = scrapy.Field()
+            user_id = scrapy.Field()
+            status_code = scrapy.Field()
+        is_da_ren = scrapy.Field()
+        daren_tag_image = scrapy.Field()
+        qq_face = scrapy.Field()
+        is_q_q_friend = scrapy.Field()
+        user = scrapy.Field()
+            mana_of_shop = scrapy.Field()
+            group_user_score = scrapy.Field()
+            user_email = scrapy.Field()
+            mobile_n_o_status = scrapy.Field()
+            user_source = scrapy.Field()
+            refuse_card = scrapy.Field()
+            mobile_n_o = scrapy.Field()
+            user_id = scrapy.Field()
+            user_nick_name = scrapy.Field()
+            user_hits = scrapy.Field()
+            email_option = scrapy.Field()
+            mana_score = scrapy.Field()
+            mana_of_other = scrapy.Field()
+            user_email_verify_status = scrapy.Field()
+            mana_of_user_base = scrapy.Field()
+            user_big_face = scrapy.Field()
+            free_book_city = scrapy.Field()
+            old_group_user_score = scrapy.Field()
+            user_daily_login = scrapy.Field()
+            user_vote_good = scrapy.Field()
+            group_total = scrapy.Field()
+            raw_u_r_l = scrapy.Field()
+            user_power = scrapy.Field()
+            user_face = scrapy.Field()
+            dcash = scrapy.Field()
+            user_login = scrapy.Field()
+            user_tags = scrapy.Field()
+            user_city = scrapy.Field()
+            user_status = scrapy.Field()
+            refuse_promo = scrapy.Field()
+            user_vote = scrapy.Field()
+            perma_link = scrapy.Field()
+            mana_of_pic = scrapy.Field()
+            user_i_p = scrapy.Field()
+            reg_invite_no = scrapy.Field()
+            big_face = scrapy.Field()
+            mana_of_review = scrapy.Field()
+        pic_list = scrapy.Field()
+            status = scrapy.Field()
+            client_type_name = scrapy.Field()
+            pic_power = scrapy.Field()
+            rate_good_total = scrapy.Field()
+            client_type = scrapy.Field()
+            pic_power_title = scrapy.Field()
+            small_picture = scrapy.Field()
+            price = scrapy.Field()
+            user_id = scrapy.Field()
+            last_ip = scrapy.Field()
+            middle_picture = scrapy.Field()
+            shop_group_id = scrapy.Field()
+            city_id = scrapy.Field()
+            pic_id = scrapy.Field()
+            is_top = scrapy.Field()
+            rank = scrapy.Field()
+            pic_type = scrapy.Field()
+            shop_type = scrapy.Field()
+            order_no = scrapy.Field()
+            height = scrapy.Field()
+            pic_price = scrapy.Field()
+            hits = scrapy.Field()
+            title = scrapy.Field()
+            url = scrapy.Field()
+            add_time = scrapy.Field()
+            tags = scrapy.Field()
+            shop_id = scrapy.Field()
+            width = scrapy.Field()
+            follow_note_no = scrapy.Field()
+            big_picture = scrapy.Field()
+            last_time = scrapy.Field()
+            status_code = scrapy.Field()
+        vip_level = scrapy.Field()
+        user_level_title = scrapy.Field()
+'''
